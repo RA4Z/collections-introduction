@@ -31,3 +31,13 @@ print(idades_ano_que_vem)
 # INSERINDO EM UMA NOVA LISTA TODOS QUE FOREM MAIOR DE IDADE
 maior_idade = [(idade) for idade in idades if idade > 18]
 print(maior_idade)
+
+# METODO CORRETO DE MEXER COM IMUTABILIDADE
+def faz_processamento_de_visualizacao(lista = None):
+    if lista == None:
+        lista = list()
+    print(len(lista))
+    print(lista)
+    lista.append(7)
+
+faz_processamento_de_visualizacao()
