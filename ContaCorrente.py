@@ -1,6 +1,7 @@
-# LISTAS SÃO MUTÁVEIS
+from Conta import Conta
 
-class ContaCorrente:
+# LISTAS SÃO MUTÁVEIS
+class ContaCorrente(Conta):
     def __init__(self, codigo):
         self.codigo = codigo
         self.saldo = 0
@@ -10,7 +11,7 @@ class ContaCorrente:
 
     def __str__(self):
         return '[>>Codigo {} Slado {}<<]'.format(self.codigo, self.saldo)
-    
+
 
 def deposita_para_todas(contas):
     for conta in contas:
