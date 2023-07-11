@@ -30,3 +30,8 @@ for conta in contas:
 #TUPLAS SÃO IMUTÁVEIS
 raz = ('Robert', 19, 2003)
 karol = ('Karoline', 20, 2002)
+print('------------------------\n')
+
+usuarios = [raz, karol]
+usuarios.append(('Paulo', 39, 1979))
+print(usuarios)
