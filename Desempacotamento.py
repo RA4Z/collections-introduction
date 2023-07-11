@@ -28,3 +28,14 @@ for nome, idade, nascimento in usuarios:
 #IGNORANDO RESTO
 for nome, _, _ in usuarios:
     print(nome)
+
+#ORDENAR DE FORMA CRESCENTE
+print(sorted(idades))
+
+#ORDENAR DE FORMA DECRESCENTE
+print(sorted(idades, reverse=True))
+
+#ALTERAR A LISTA EM ORDEM CRESCENTE
+idades.sort()
+
+print(idades)
