@@ -1,4 +1,5 @@
 from collections import defaultdict
+from collections import Counter
 
 usuarios_data_science = {15, 23, 43, 56}
 usuarios_machine_learning = {13, 23, 56, 42}
@@ -73,11 +74,32 @@ for palavra in texto.split():
     ate_agora = aparicoes.get(palavra, 0)
     aparicoes[palavra] = ate_agora + 1
 
-
 #USANDO DEFAULT DICT PARA CONSEGUIR INSERIR VALORES COM VALOR PADRÃO 0
 aparicoes = defaultdict(int)
 for palavra in texto.split():
     ate_agora = aparicoes[palavra]
     aparicoes[palavra] = ate_agora + 1
 
+#REDUZINDO MAIS AINDA O CÓDIGO
+aparicoes = defaultdict(int)
+for palavra in texto.split():
+    aparicoes[palavra] += 1
+
+print(aparicoes)
+
+
+#APLICANDO ISSO NA PRÁTICA USANDO UMA CLASSE
+class Conta:
+    def __init__(self):
+        print('Criando uma conta')
+
+contas = defaultdict(Conta)
+contas[15]
+contas[23]
+contas[41]
+contas[57]
+print(contas)
+
+#FAZENDO A CONTAGEM COM UM MÉTODO DE UMA API
+aparicoes = Counter(texto.split())
 print(aparicoes)
