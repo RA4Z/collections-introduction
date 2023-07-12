@@ -20,3 +20,13 @@ print('\n-----------------------------------------\n')
 
 texto = 'Meu nome é Robert e eu sou um ser humano muito divertido que trabalha todo dia porque sou muito trabalhador'
 print(set(texto.split()))   #COLOCANDO EM UM CONJUNTO CADA PALAVRA INDIVIDUAL QUE EXISTE NA STRING
+
+aparicoes = {
+    'Robert': 1,
+    'sou': 2,
+    'muito': 2,
+    'nome': 1
+}
+
+print(type(aparicoes))
+print(aparicoes.get('Robert', 0))
