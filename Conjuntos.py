@@ -21,6 +21,7 @@ print('\n-----------------------------------------\n')
 texto = 'Meu nome é Robert e eu sou um ser humano muito divertido que trabalha todo dia porque sou muito trabalhador'
 print(set(texto.split()))   #COLOCANDO EM UM CONJUNTO CADA PALAVRA INDIVIDUAL QUE EXISTE NA STRING
 
+#CRIANDO DICIONÁRIO
 aparicoes = {
     'Robert': 1,
     'sou': 2,
@@ -30,3 +31,31 @@ aparicoes = {
 
 print(type(aparicoes))
 print(aparicoes.get('Robert', 0))
+aparicoes['Carlos'] = 1
+
+print(aparicoes)
+del aparicoes['Carlos'] #DELETAR ALGO NO DICIONÁRIO
+print(aparicoes)
+
+#MOSTRAR CHAVES (NOMES)
+for elemento in aparicoes.keys():
+    print(elemento)
+
+#MOSTRAR VALORES (NÚMEROS)
+for elemento in aparicoes.values():
+    print(elemento)
+    
+#MOSTRAR AMBOS DE FORMA INTELIGENTE
+for elemento in aparicoes:
+    print(elemento, aparicoes[elemento])
+
+#MOSTRAR A LINHA INTEIRA DE FORMA BRUTA
+for elemento in aparicoes.items():
+    print(elemento)
+
+#MOSTRAR A LINHA INTEIRA DESEMPACOTANDO OS VALORES
+for chave, valor in aparicoes.items():
+    print(f'{chave} : {valor}')
+
+#CONCATENANDO DIRETAMENTE NO FOR E MOSTRANDO OS VALORES
+print([f'palavra {chave}' for chave in aparicoes.keys()])
