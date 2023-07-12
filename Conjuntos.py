@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 usuarios_data_science = {15, 23, 43, 56}
 usuarios_machine_learning = {13, 23, 56, 42}
 
@@ -59,3 +61,23 @@ for chave, valor in aparicoes.items():
 
 #CONCATENANDO DIRETAMENTE NO FOR E MOSTRANDO OS VALORES
 print([f'palavra {chave}' for chave in aparicoes.keys()])
+
+#COLOCANDO TODO O TEXTO EM LOWER CASE
+texto = texto.lower()
+
+#CRIANDO DICIONÁRIO VAZIO
+aparicoes = {}
+
+#FAZENDO A RECORTAGEM DE PALAVRAS E INSERINDO EM UM DICIONÁRIO
+for palavra in texto.split():
+    ate_agora = aparicoes.get(palavra, 0)
+    aparicoes[palavra] = ate_agora + 1
+
+
+#USANDO DEFAULT DICT PARA CONSEGUIR INSERIR VALORES COM VALOR PADRÃO 0
+aparicoes = defaultdict(int)
+for palavra in texto.split():
+    ate_agora = aparicoes[palavra]
+    aparicoes[palavra] = ate_agora + 1
+
+print(aparicoes)
