@@ -103,3 +103,23 @@ print(contas)
 #FAZENDO A CONTAGEM COM UM MÉTODO DE UMA API
 aparicoes = Counter(texto.split())
 print(aparicoes)
+
+print('\n-------------------------------------------------\n')
+
+texto1 = """
+    awndanwduiangoifawg
+    rgrgrdgrd
+    gdrgrdgdr
+    gdrgdr
+    hrdhrdhrdhrdhdrhrdhdrhdr
+    hdrhrdhdrhrdhh
+"""
+
+aparicoes = Counter(texto1.lower())
+total_de_caracteres = sum(aparicoes.values())
+
+proporcoes = [(letra, frequencia / total_de_caracteres) for letra, frequencia in aparicoes.items()]
+proporcoes = Counter(dict(proporcoes))
+mais_comuns = proporcoes.most_common(3)
+for caractere, proporcao in mais_comuns:
+    print(f'{caractere} => {(proporcao * 100):.2f}%')
